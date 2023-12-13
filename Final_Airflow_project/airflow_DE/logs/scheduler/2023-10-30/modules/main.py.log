@@ -1,0 +1,34 @@
+[2023-10-30T15:36:58.718+0000] {processor.py:157} INFO - Started process (PID=119) to work on /opt/airflow/dags/modules/main.py
+[2023-10-30T15:36:58.720+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/modules/main.py for tasks to queue
+[2023-10-30T15:36:58.723+0000] {logging_mixin.py:151} INFO - [2023-10-30T15:36:58.722+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/modules/main.py
+[2023-10-30T15:37:30.326+0000] {logging_mixin.py:151} INFO - [2023-10-30T15:37:29.072+0000] {timeout.py:68} ERROR - Process timed out, PID: 119
+[2023-10-30T15:37:32.169+0000] {logging_mixin.py:151} INFO - [2023-10-30T15:37:30.435+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/modules/main.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/modules/main.py", line 2, in <module>
+    import pandas as pd
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/__init__.py", line 48, in <module>
+    from pandas.core.api import (
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/api.py", line 27, in <module>
+    from pandas.core.arrays import Categorical
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/arrays/__init__.py", line 1, in <module>
+    from pandas.core.arrays.arrow import ArrowExtensionArray
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/arrays/arrow/__init__.py", line 1, in <module>
+    from pandas.core.arrays.arrow.array import ArrowExtensionArray
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 839, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 934, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1033, in get_data
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/timeout.py", line 69, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /opt/airflow/dags/modules/main.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.7.2/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.7.2/best-practices.html#reducing-dag-complexity, PID: 119
+[2023-10-30T15:37:32.169+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/modules/main.py
+[2023-10-30T15:37:40.529+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/modules/main.py took 41.854 seconds

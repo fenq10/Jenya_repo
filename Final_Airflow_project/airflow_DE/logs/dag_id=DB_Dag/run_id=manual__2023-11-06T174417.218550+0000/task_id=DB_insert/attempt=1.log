@@ -1,0 +1,48 @@
+[2023-11-06T17:44:42.478+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: DB_Dag.DB_insert manual__2023-11-06T17:44:17.218550+00:00 [queued]>
+[2023-11-06T17:44:42.490+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: DB_Dag.DB_insert manual__2023-11-06T17:44:17.218550+00:00 [queued]>
+[2023-11-06T17:44:42.492+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-11-06T17:44:42.618+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): DB_insert> on 2023-11-06 17:44:17.218550+00:00
+[2023-11-06T17:44:42.627+0000] {standard_task_runner.py:57} INFO - Started process 89 to run task
+[2023-11-06T17:44:42.632+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'DB_Dag', 'DB_insert', 'manual__2023-11-06T17:44:17.218550+00:00', '--job-id', '44', '--raw', '--subdir', 'DAGS_FOLDER/DB_DAG.py', '--cfg-path', '/tmp/tmp715xx952']
+[2023-11-06T17:44:42.635+0000] {standard_task_runner.py:85} INFO - Job 44: Subtask DB_insert
+[2023-11-06T17:44:42.855+0000] {task_command.py:416} INFO - Running <TaskInstance: DB_Dag.DB_insert manual__2023-11-06T17:44:17.218550+00:00 [running]> on host c02430af48c6
+[2023-11-06T17:44:43.715+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='DB_Dag' AIRFLOW_CTX_TASK_ID='DB_insert' AIRFLOW_CTX_EXECUTION_DATE='2023-11-06T17:44:17.218550+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-06T17:44:17.218550+00:00'
+[2023-11-06T17:45:40.973+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator FunctionTransformer from version 0.23.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+
+[2023-11-06T17:45:40.976+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 0.23.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+
+[2023-11-06T17:45:43.959+0000] {warnings.py:109} WARNING - model.py:22: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T17:45:44.131+0000] {warnings.py:109} WARNING - model.py:26: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T17:45:44.134+0000] {warnings.py:109} WARNING - model.py:30: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T17:45:44.138+0000] {warnings.py:109} WARNING - model.py:32: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T17:45:55.806+0000] {logging_mixin.py:151} INFO - insert completed 100
+[2023-11-06T17:45:56.989+0000] {warnings.py:109} WARNING - model.py:50: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T17:46:33.421+0000] {logging_mixin.py:151} INFO - insert completed 100
+[2023-11-06T17:46:33.422+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-11-06T17:46:33.443+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=DB_Dag, task_id=DB_insert, execution_date=20231106T174417, start_date=20231106T174442, end_date=20231106T174633
+[2023-11-06T17:46:33.766+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-06T17:46:33.793+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

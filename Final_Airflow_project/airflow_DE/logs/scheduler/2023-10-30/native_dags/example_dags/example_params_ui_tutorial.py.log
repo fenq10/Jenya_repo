@@ -1,0 +1,5 @@
+[2023-10-30T15:37:18.011+0000] {processor.py:157} INFO - Started process (PID=122) to work on /home/airflow/.local/lib/python3.8/site-packages/airflow/example_dags/example_params_ui_tutorial.py
+[2023-10-30T15:37:18.016+0000] {processor.py:829} INFO - Processing file /home/airflow/.local/lib/python3.8/site-packages/airflow/example_dags/example_params_ui_tutorial.py for tasks to queue
+[2023-10-30T15:37:18.020+0000] {logging_mixin.py:151} INFO - [2023-10-30T15:37:18.019+0000] {dagbag.py:536} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.8/site-packages/airflow/example_dags/example_params_ui_tutorial.py
+[2023-10-30T15:37:24.161+0000] {processor.py:839} INFO - DAG(s) dict_keys(['example_params_ui_tutorial']) retrieved from /home/airflow/.local/lib/python3.8/site-packages/airflow/example_dags/example_params_ui_tutorial.py
+[2023-10-30T15:38:00.641+0000] {logging_mixin.py:151} INFO - [2023-10-30T15:38:00.641+0000] {process_utils.py:259} INFO - Waiting up to 5 seconds for processes to exit...

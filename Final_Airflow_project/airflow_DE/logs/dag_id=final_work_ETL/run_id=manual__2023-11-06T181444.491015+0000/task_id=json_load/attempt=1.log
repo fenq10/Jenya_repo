@@ -1,0 +1,50 @@
+[2023-11-06T18:15:01.997+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: final_work_ETL.json_load manual__2023-11-06T18:14:44.491015+00:00 [queued]>
+[2023-11-06T18:15:02.374+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: final_work_ETL.json_load manual__2023-11-06T18:14:44.491015+00:00 [queued]>
+[2023-11-06T18:15:02.376+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-11-06T18:15:02.991+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): json_load> on 2023-11-06 18:14:44.491015+00:00
+[2023-11-06T18:15:03.217+0000] {standard_task_runner.py:57} INFO - Started process 144 to run task
+[2023-11-06T18:15:03.246+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'final_work_ETL', 'json_load', 'manual__2023-11-06T18:14:44.491015+00:00', '--job-id', '57', '--raw', '--subdir', 'DAGS_FOLDER/DAGs.py', '--cfg-path', '/tmp/tmp5xb50cwp']
+[2023-11-06T18:15:03.248+0000] {standard_task_runner.py:85} INFO - Job 57: Subtask json_load
+[2023-11-06T18:15:03.701+0000] {task_command.py:416} INFO - Running <TaskInstance: final_work_ETL.json_load manual__2023-11-06T18:14:44.491015+00:00 [running]> on host c02430af48c6
+[2023-11-06T18:15:04.858+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='final_work_ETL' AIRFLOW_CTX_TASK_ID='json_load' AIRFLOW_CTX_EXECUTION_DATE='2023-11-06T18:14:44.491015+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-06T18:14:44.491015+00:00'
+[2023-11-06T18:15:05.748+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator FunctionTransformer from version 0.23.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+
+[2023-11-06T18:15:05.757+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 0.23.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+
+[2023-11-06T18:15:05.780+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/dags/modules/json_loader.py", line 29, in json_load
+    new_df_s = model_sessions['model'].transform(df)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sklearn/pipeline.py", line 696, in transform
+    Xt = transform.transform(Xt)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sklearn/pipeline.py", line 696, in transform
+    Xt = transform.transform(Xt)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sklearn/utils/_set_output.py", line 157, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sklearn/preprocessing/_function_transformer.py", line 240, in transform
+    return self._transform(X, func=self.func, kw_args=self.kw_args)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sklearn/preprocessing/_function_transformer.py", line 312, in _transform
+    return func(X, **(kw_args if kw_args else {}))
+  File "model.py", line 22, in sessions_preparation
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/generic.py", line 5989, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'DataFrame' object has no attribute 'device_os'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/modules/json_loader.py", line 33, in json_load
+    print(f'Error at {file}:', traceback.format_exc())
+NameError: name 'traceback' is not defined
+[2023-11-06T18:15:06.439+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=final_work_ETL, task_id=json_load, execution_date=20231106T181444, start_date=20231106T181502, end_date=20231106T181506
+[2023-11-06T18:15:06.685+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 57 for task json_load (name 'traceback' is not defined; 144)
+[2023-11-06T18:15:06.719+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-06T18:15:06.749+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

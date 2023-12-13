@@ -1,0 +1,37 @@
+[2023-10-30T15:36:27.890+0000] {processor.py:157} INFO - Started process (PID=108) to work on /opt/airflow/dags/modules/json_loader.py
+[2023-10-30T15:36:27.891+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/modules/json_loader.py for tasks to queue
+[2023-10-30T15:36:27.896+0000] {logging_mixin.py:151} INFO - [2023-10-30T15:36:27.895+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/modules/json_loader.py
+[2023-10-30T15:36:58.131+0000] {logging_mixin.py:151} INFO - [2023-10-30T15:36:58.130+0000] {timeout.py:68} ERROR - Process timed out, PID: 108
+[2023-10-30T15:36:58.578+0000] {logging_mixin.py:151} INFO - [2023-10-30T15:36:58.272+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/modules/json_loader.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/modules/json_loader.py", line 2, in <module>
+    import pandas as pd
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/__init__.py", line 22, in <module>
+    from pandas.compat import is_numpy_dev as _is_numpy_dev  # pyright: ignore # noqa:F401
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/compat/__init__.py", line 29, in <module>
+    from pandas.compat.pyarrow import (
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/compat/pyarrow.py", line 8, in <module>
+    import pyarrow as pa
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyarrow/__init__.py", line 65, in <module>
+    import pyarrow.lib as _lib
+  File "pyarrow/compat.pxi", line 43, in init pyarrow.lib
+  File "/home/airflow/.local/lib/python3.8/site-packages/cloudpickle/__init__.py", line 1, in <module>
+    from cloudpickle.cloudpickle import *  # noqa
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 839, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 934, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1033, in get_data
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/timeout.py", line 69, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /opt/airflow/dags/modules/json_loader.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.7.2/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.7.2/best-practices.html#reducing-dag-complexity, PID: 108
+[2023-10-30T15:36:58.579+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/modules/json_loader.py
+[2023-10-30T15:36:59.118+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/modules/json_loader.py took 31.233 seconds

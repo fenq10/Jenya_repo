@@ -1,0 +1,4 @@
+[2023-10-30T15:37:51.992+0000] {processor.py:157} INFO - Started process (PID=125) to work on /home/airflow/.local/lib/python3.8/site-packages/airflow/example_dags/example_kubernetes_executor.py
+[2023-10-30T15:37:52.002+0000] {processor.py:829} INFO - Processing file /home/airflow/.local/lib/python3.8/site-packages/airflow/example_dags/example_kubernetes_executor.py for tasks to queue
+[2023-10-30T15:37:52.008+0000] {logging_mixin.py:151} INFO - [2023-10-30T15:37:52.004+0000] {dagbag.py:536} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.8/site-packages/airflow/example_dags/example_kubernetes_executor.py
+[2023-10-30T15:38:00.227+0000] {logging_mixin.py:151} INFO - [2023-10-30T15:38:00.227+0000] {process_utils.py:259} INFO - Waiting up to 5 seconds for processes to exit...

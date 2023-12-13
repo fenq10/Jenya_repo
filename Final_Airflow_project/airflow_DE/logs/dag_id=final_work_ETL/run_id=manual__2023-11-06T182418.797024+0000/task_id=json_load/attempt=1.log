@@ -1,0 +1,171 @@
+[2023-11-06T18:24:51.178+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: final_work_ETL.json_load manual__2023-11-06T18:24:18.797024+00:00 [queued]>
+[2023-11-06T18:24:51.190+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: final_work_ETL.json_load manual__2023-11-06T18:24:18.797024+00:00 [queued]>
+[2023-11-06T18:24:51.191+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-11-06T18:24:51.291+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): json_load> on 2023-11-06 18:24:18.797024+00:00
+[2023-11-06T18:24:51.299+0000] {standard_task_runner.py:57} INFO - Started process 96 to run task
+[2023-11-06T18:24:51.304+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'final_work_ETL', 'json_load', 'manual__2023-11-06T18:24:18.797024+00:00', '--job-id', '61', '--raw', '--subdir', 'DAGS_FOLDER/DAGs.py', '--cfg-path', '/tmp/tmplfj2h9np']
+[2023-11-06T18:24:51.306+0000] {standard_task_runner.py:85} INFO - Job 61: Subtask json_load
+[2023-11-06T18:24:51.413+0000] {task_command.py:416} INFO - Running <TaskInstance: final_work_ETL.json_load manual__2023-11-06T18:24:18.797024+00:00 [running]> on host c02430af48c6
+[2023-11-06T18:24:51.616+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='final_work_ETL' AIRFLOW_CTX_TASK_ID='json_load' AIRFLOW_CTX_EXECUTION_DATE='2023-11-06T18:24:18.797024+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-06T18:24:18.797024+00:00'
+[2023-11-06T18:25:10.090+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator FunctionTransformer from version 0.23.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+
+[2023-11-06T18:25:10.093+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 0.23.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+
+[2023-11-06T18:25:10.526+0000] {logging_mixin.py:151} INFO - Error at ga_sessions_new_2022-01-01.json: Traceback (most recent call last):
+  File "/opt/***/dags/modules/json_loader.py", line 29, in json_load
+    new_df_s = model_sessions['model'].transform(df)
+  File "/home/***/.local/lib/python3.8/site-packages/sklearn/pipeline.py", line 696, in transform
+    Xt = transform.transform(Xt)
+  File "/home/***/.local/lib/python3.8/site-packages/sklearn/pipeline.py", line 696, in transform
+    Xt = transform.transform(Xt)
+  File "/home/***/.local/lib/python3.8/site-packages/sklearn/utils/_set_output.py", line 157, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/sklearn/preprocessing/_function_transformer.py", line 240, in transform
+    return self._transform(X, func=self.func, kw_args=self.kw_args)
+  File "/home/***/.local/lib/python3.8/site-packages/sklearn/preprocessing/_function_transformer.py", line 312, in _transform
+    return func(X, **(kw_args if kw_args else {}))
+  File "model.py", line 22, in sessions_preparation
+  File "/home/***/.local/lib/python3.8/site-packages/pandas/core/generic.py", line 5989, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'DataFrame' object has no attribute 'device_os'
+[2023-11-06T18:25:12.419+0000] {warnings.py:109} WARNING - model.py:22: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T18:25:12.426+0000] {warnings.py:109} WARNING - model.py:26: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T18:25:12.432+0000] {warnings.py:109} WARNING - model.py:30: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T18:25:12.436+0000] {warnings.py:109} WARNING - model.py:32: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T18:25:25.945+0000] {logging_mixin.py:151} INFO - insert completed 7277
+[2023-11-06T18:25:25.950+0000] {logging_mixin.py:151} INFO - insert ga_sessions_new_2022-01-02.json completed
+[2023-11-06T18:25:26.963+0000] {warnings.py:109} WARNING - model.py:22: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T18:25:26.970+0000] {warnings.py:109} WARNING - model.py:26: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T18:25:26.975+0000] {warnings.py:109} WARNING - model.py:30: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T18:25:26.982+0000] {warnings.py:109} WARNING - model.py:32: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T18:25:33.133+0000] {logging_mixin.py:151} INFO - insert completed 8569
+[2023-11-06T18:25:33.150+0000] {logging_mixin.py:151} INFO - insert ga_sessions_new_2022-01-03.json completed
+[2023-11-06T18:25:34.992+0000] {warnings.py:109} WARNING - model.py:22: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T18:25:35.001+0000] {warnings.py:109} WARNING - model.py:26: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T18:25:35.005+0000] {warnings.py:109} WARNING - model.py:30: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T18:25:35.012+0000] {warnings.py:109} WARNING - model.py:32: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T18:25:41.279+0000] {logging_mixin.py:151} INFO - insert completed 9383
+[2023-11-06T18:25:41.284+0000] {logging_mixin.py:151} INFO - insert ga_sessions_new_2022-01-04.json completed
+[2023-11-06T18:25:47.920+0000] {warnings.py:109} WARNING - model.py:22: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T18:25:47.928+0000] {warnings.py:109} WARNING - model.py:26: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T18:25:47.932+0000] {warnings.py:109} WARNING - model.py:30: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T18:25:47.936+0000] {warnings.py:109} WARNING - model.py:32: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T18:25:55.692+0000] {logging_mixin.py:151} INFO - insert completed 9493
+[2023-11-06T18:25:55.723+0000] {logging_mixin.py:151} INFO - insert ga_sessions_new_2022-01-05.json completed
+[2023-11-06T18:25:55.872+0000] {logging_mixin.py:151} INFO - Error at ga_hits_new_2022-01-01.json: Traceback (most recent call last):
+  File "/opt/***/dags/modules/json_loader.py", line 45, in json_load
+    new_df_h = model_hits['model'].transform(df)
+  File "/home/***/.local/lib/python3.8/site-packages/sklearn/pipeline.py", line 696, in transform
+    Xt = transform.transform(Xt)
+  File "/home/***/.local/lib/python3.8/site-packages/sklearn/pipeline.py", line 696, in transform
+    Xt = transform.transform(Xt)
+  File "/home/***/.local/lib/python3.8/site-packages/sklearn/utils/_set_output.py", line 157, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/sklearn/preprocessing/_function_transformer.py", line 240, in transform
+    return self._transform(X, func=self.func, kw_args=self.kw_args)
+  File "/home/***/.local/lib/python3.8/site-packages/sklearn/preprocessing/_function_transformer.py", line 312, in _transform
+    return func(X, **(kw_args if kw_args else {}))
+  File "model.py", line 47, in hits_preparation
+  File "/home/***/.local/lib/python3.8/site-packages/pandas/core/generic.py", line 5989, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'DataFrame' object has no attribute 'hit_date'
+[2023-11-06T18:26:05.644+0000] {warnings.py:109} WARNING - model.py:50: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T18:26:47.661+0000] {logging_mixin.py:151} INFO - insert completed 73499
+[2023-11-06T18:26:47.679+0000] {logging_mixin.py:151} INFO - insert ga_hits_new_2022-01-02.json completed
+[2023-11-06T18:26:54.544+0000] {warnings.py:109} WARNING - model.py:50: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T18:28:25.999+0000] {logging_mixin.py:151} INFO - insert completed 81243
+[2023-11-06T18:28:26.041+0000] {logging_mixin.py:151} INFO - insert ga_hits_new_2022-01-03.json completed
+[2023-11-06T18:29:26.807+0000] {warnings.py:109} WARNING - model.py:50: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T18:30:11.509+0000] {logging_mixin.py:151} INFO - insert completed 91576
+[2023-11-06T18:30:11.531+0000] {logging_mixin.py:151} INFO - insert ga_hits_new_2022-01-04.json completed
+[2023-11-06T18:30:21.332+0000] {warnings.py:109} WARNING - model.py:50: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+[2023-11-06T18:31:49.555+0000] {logging_mixin.py:151} INFO - insert completed 92170
+[2023-11-06T18:31:49.587+0000] {logging_mixin.py:151} INFO - insert ga_hits_new_2022-01-05.json completed
+[2023-11-06T18:31:49.917+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-11-06T18:31:49.940+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=final_work_ETL, task_id=json_load, execution_date=20231106T182418, start_date=20231106T182451, end_date=20231106T183149
+[2023-11-06T18:31:50.689+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-06T18:31:51.445+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
