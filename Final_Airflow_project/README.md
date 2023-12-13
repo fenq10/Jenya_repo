@@ -22,7 +22,7 @@
 
 Что делает контейнер:
 1. Инициализирует БД Postgre, создает в ней 2 таблицы
-2. Создает 2 дага airflow, первый заливает начальные данные csv в таблицы, второй обрабатывает jsonы.
+2. Создает 2 дага airflow, первый заливает начальные данные csv в таблицы, второй обрабатывает jsonы через pickls и отправляет в БД.
 3. Также для удобства добавил в контейнер adminer(http://localhost:9999) (pgsql=postgres username=airflow db=airflow password=airflow), для проверки таблиц можно выполнить запрос:
   select count(*) from ga_sessions
   union all
