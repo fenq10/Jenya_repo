@@ -1,2 +1,2 @@
-# Jenya_repo
-Sokolov Evgeny
+# Hi everyone, i'm Jenya
+Data Science engineer
